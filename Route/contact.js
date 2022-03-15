@@ -46,9 +46,9 @@ const Contact = require("../model/Contact");
   router.get('/all',async(req,res)=>{
       try {
           const contactList=await Contact.find()
-          res.status(200).send({msg:"hethy lista mte3na",contactList})
+          res.status(200).send({msg:"Done",contactList})
       } catch (error) {
-        res.status(400).send({ msg: "ma fameeeeeeesh lista", error });
+        res.status(400).send({ msg: "try againe", error });
       }
   })
 
@@ -60,10 +60,10 @@ router.get('/:_id',async(req,res)=>{
 try {
     const {_id}=req.params
     const foundContact=await Contact.findOne({_id})
-    res.status(200).send({msg:"contact fouuuund",foundContact})
+    res.status(200).send({msg:"Done",foundContact})
     
 } catch (error) {
-    res.status(400).send({ msg: "ma fameeeeeeesh contact", error });
+    res.status(400).send({ msg: "try againe", error });
 }
 })
 
@@ -76,10 +76,10 @@ try {
         const {_id}=req.params
         const {name,email,phone}=req.body
         const editContact=await Contact.updateOne({_id},{$set:{...req.body}})
-        res.status(200).send({msg:"contact updaating",editContact})
+        res.status(200).send({msg:"Done",editContact})
         
     } catch (error) {
-        res.status(400).send({ msg: "ma fameeeeeeesh updaaate", error });
+        res.status(400).send({ msg: "try againe", error });
     }
     })
 
@@ -91,10 +91,10 @@ try {
         try {
             const {_id}=req.params
             const deleteContact=await Contact.deleteOne({_id})
-            res.status(200).send({msg:"contact tfasaaaaakh",deleteContact})
+            res.status(200).send({msg:"Done",deleteContact})
             
         } catch (error) {
-            res.status(400).send({ msg: "contact ma tfasaaaaaakhech", error });
+            res.status(400).send({ msg: "try againe", error });
         }
         })
 
